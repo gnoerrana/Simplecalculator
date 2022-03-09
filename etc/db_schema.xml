@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="addons_simplecalculator" resource="default" engine="innodb" comment="Addons Simplecalculator Table">
+		<column xsi:type="smallint" name="id" padding="6" unsigned="true" nullable="false" identity="true" comment="ID"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="id"/>
+		</constraint>
+		<column name="customer_id" nullable="false" xsi:type="text" comment="Customer Id"/>
+		<column name="first_name" nullable="false" xsi:type="text" comment="First Name"/>
+		<column name="last_name" nullable="false" xsi:type="text" comment="Last Name"/>
+		<column name="first_num" nullable="false" xsi:type="int" comment="First Number"/>
+		<column name="second_num" nullable="false" xsi:type="int" comment="Second Number"/>
+		<column name="operation" nullable="false" xsi:type="text" comment="Operation"/>
+		<column name="result" nullable="false" xsi:type="int" comment="Result"/>
+	</table>
+</schema>

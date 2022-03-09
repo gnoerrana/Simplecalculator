@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Addons\Simplecalculator\Api\SimplecalculatorRepositoryInterface" type="Addons\Simplecalculator\Model\SimplecalculatorRepository"/>
+	<preference for="Addons\Simplecalculator\Api\Data\SimplecalculatorInterface" type="Addons\Simplecalculator\Model\Data\Simplecalculator"/>
+	<preference for="Addons\Simplecalculator\Api\Data\SimplecalculatorSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Addons\Simplecalculator\Model\ResourceModel\Simplecalculator\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">addons_simplecalculator</argument>
+			<argument name="resourceModel" xsi:type="string">Addons\Simplecalculator\Model\ResourceModel\Simplecalculator\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="addons_simplecalculator_listing_data_source" xsi:type="string">Addons\Simplecalculator\Model\ResourceModel\Simplecalculator\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
