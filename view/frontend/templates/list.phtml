@@ -1,49 +1,53 @@
 
 <?php $collection = $block->getSimplecalculatorCollection(); ?>
+<div class="block block-dashboard-history">
+    <div class="block-title">
+        <strong><?php echo __('Your Calculation History');?></strong>
+    </div>
 
-<h2><?php echo __('Your Calculation History');?></h2>
-
-<?php if($collection->count() > 0): ?>
-    <table class="data table" id="simplecalculator-data-table">
-        <caption class="table-caption"><?php echo __('Addons Simplecalculator Data');?></caption>
-        <thead>
-            <tr>
-                <th scope="col" class="col first_name"><?php echo __('First Name');?></th>
-                <th scope="col" class="col last_name"><?php echo __('Last Name');?></th>
-                <th scope="col" class="col first_num"><?php echo __('First Number');?></th>
-                <th scope="col" class="col second_num"><?php echo __('Second Number');?></th>
-                <th scope="col" class="col operation"><?php echo __('Operation');?></th>
-                <th scope="col" class="col result"><?php echo __('Result');?></th>
-                <th scope="col" class="col actions"><?php echo __('Action');?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($collection as $key => $data): ?>
+    <?php if($collection->count() > 0): ?>
+        <table class="data table" id="simplecalculator-data-table">
+            <caption class="table-caption"><?php echo __('Addons Simplecalculator Data');?></caption>
+            <thead>
                 <tr>
-                    <td data-th="first_name" class="col first_name"><?php echo $data->getFirstName(); ?></td>
-                    <td data-th="last_name" class="col last_name"><?php echo $data->getLastName(); ?></td>
-
-                    <td data-th="first_num" class="col first_num"><?php echo $data->getFirstNum(); ?></td>
-                    <td data-th="second_num" class="col second_num"><?php echo $data->getSecondNum(); ?></td>
-
-                    <td data-th="operation" class="col operation"><?php echo $data->getOperation(); ?></td>
-                    <td data-th="result" class="col result"><?php echo $data->getResult(); ?></td>
-                    
-
-                    <td data-th="Actions" class="col actions">
-                        <?php $id = ($data->getId()) ? $data->getId() : $data['id']; ?>
-                        
-                        <a href="<?php echo $block->getBaseUrl().'simplecalculator/index/delete/id/'.$id; ?>" class="action view" onclick="return confirm('Are you sure you want to delete this item?')">
-                            <span>Delete</span>
-                        </a>
-                    </td>
+                    <th scope="col" class="col first_name"><?php echo __('First Name');?></th>
+                    <th scope="col" class="col last_name"><?php echo __('Last Name');?></th>
+                    <th scope="col" class="col first_num"><?php echo __('First Number');?></th>
+                    <th scope="col" class="col second_num"><?php echo __('Second Number');?></th>
+                    <th scope="col" class="col operation"><?php echo __('Operation');?></th>
+                    <th scope="col" class="col result"><?php echo __('Result');?></th>
+                    <th scope="col" class="col actions"><?php echo __('Action');?></th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <?php if ($block->getPagerHtml()): ?>
-        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
-    <?php endif ?>
-<?php else: ?>
-    <p><?php echo __('Nothing being calculated');?></p>
-<?php endif; ?>
+            </thead>
+            <tbody>
+                <?php foreach ($collection as $key => $data): ?>
+                    <tr>
+                        <td data-th="first_name" class="col first_name"><?php echo $data->getFirstName(); ?></td>
+                        <td data-th="last_name" class="col last_name"><?php echo $data->getLastName(); ?></td>
+
+                        <td data-th="first_num" class="col first_num"><?php echo $data->getFirstNum(); ?></td>
+                        <td data-th="second_num" class="col second_num"><?php echo $data->getSecondNum(); ?></td>
+
+                        <td data-th="operation" class="col operation"><?php echo $data->getOperation(); ?></td>
+                        <td data-th="result" class="col result"><?php echo $data->getResult(); ?></td>
+                        
+
+                        <td data-th="Actions" class="col actions">
+                            <?php $id = ($data->getId()) ? $data->getId() : $data['id']; ?>
+                            
+                            <a href="<?php echo $block->getBaseUrl().'simplecalculator/index/delete/id/'.$id; ?>" class="action view" onclick="return confirm('Are you sure you want to delete this item?')">
+                                <span>Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <br/>
+        <?php if ($block->getPagerHtml()): ?>
+            <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+        <?php endif ?>
+    <?php else: ?>
+        <p><?php echo __('Nothing being calculated');?></p>
+    <?php endif; ?>
+</div>

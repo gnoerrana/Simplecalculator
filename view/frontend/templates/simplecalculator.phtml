@@ -1,52 +1,53 @@
-<form class="form simplecalculator"
-      action="<?php echo $block->getBaseUrl().'simplecalculator/index/save'; ?>"
-      id="addons-simplecalculator-form"
-      method="post"
-      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
-      enctype="multipart/form-data"
-      data-mage-init='{"validation":{}}'>
-    <fieldset class="fieldset">
-        <div class="field note no-label"><?= $block->escapeHtml(__('Submit First Number & Second Number then calculate the math operation')) ?></div>
+<div class="block block-dashboard-calculator-form abs-blocks-2columns">
+  <form class="form simplecalculator"
+        action="<?php echo $block->getBaseUrl().'simplecalculator/index/save'; ?>"
+        id="addons-simplecalculator-form"
+        method="post"
+        data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+        enctype="multipart/form-data"
+        data-mage-init='{"validation":{}}'>
+      <fieldset class="fieldset">
+          <legend class="legend"><span><?= $block->escapeHtml(__('Submit First Number & Second Number then calculate the math operation')) ?></span></legend>
+          <div class="field first_num required">
+              <label class="label" for="first_num"><span><?= $block->escapeHtml(__('First Number:')) ?></span></label>
+              <div class="control">
+                  <input name="first_num" 
+                         id="first_num" 
+                         title="<?= $block->escapeHtmlAttr(__('First Number')) ?>" 
+                         class="input-text" 
+                         type="number" 
+                         data-validate="{required:true}"/>
+              </div>
+          </div>
 
-        <div class="field first_num required">
-            <label class="label" for="first_num"><span><?= $block->escapeHtml(__('First Number:')) ?></span></label>
-            <div class="control">
-                <input name="first_num" 
-                       id="first_num" 
-                       title="<?= $block->escapeHtmlAttr(__('First Number')) ?>" 
-                       class="input-text" 
-                       type="number" 
-                       data-validate="{required:true}"/>
-            </div>
-        </div>
+          <div class="field second_num required">
+              <label class="label" for="second_num"><span><?= $block->escapeHtml(__('Second Number:')) ?></span></label>
+              <div class="control">
+                  <input name="second_num" 
+                         id="second_num" 
+                         title="<?= $block->escapeHtmlAttr(__('Second Number')) ?>" 
+                         class="input-text" 
+                         type="number" 
+                         data-validate="{required:true}"/>
+              </div>
+          </div>
 
-        <div class="field second_num required">
-            <label class="label" for="second_num"><span><?= $block->escapeHtml(__('Second Number:')) ?></span></label>
-            <div class="control">
-                <input name="second_num" 
-                       id="second_num" 
-                       title="<?= $block->escapeHtmlAttr(__('Second Number')) ?>" 
-                       class="input-text" 
-                       type="number" 
-                       data-validate="{required:true}"/>
-            </div>
-        </div>
-
-       <div class="field operation required input-box">
-            <label class="label" for="operation"><span><?= $block->escapeHtml(__('Operation:')) ?></span></label>
-            <div class="control">
-                <select name="operation" id="operation" data-validate="{required:true}">
-                      <option value="addition">addition (+)</option>
-                      <option value="subtraction">subtraction (-)</option>
-                  </select>
-            </div>
-        </div>
-    </fieldset>
-    <div class="actions-toolbar">
-        <div class="primary">
-            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
-                <span><?= $block->escapeHtml(__('Submit')) ?></span>
-            </button>
-        </div>
-    </div>
-</form>
+         <div class="field operation required input-box">
+              <label class="label" for="operation"><span><?= $block->escapeHtml(__('Operation:')) ?></span></label>
+              <div class="control">
+                  <select name="operation" id="operation" data-validate="{required:true}">
+                        <option value="addition">addition (+)</option>
+                        <option value="subtraction">subtraction (-)</option>
+                    </select>
+              </div>
+          </div>
+      </fieldset>
+      <div class="actions-toolbar">
+          <div class="primary">
+              <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary abs-button-l">
+                  <span><?= $block->escapeHtml(__('Submit')) ?></span>
+              </button>
+          </div>
+      </div>
+  </form>
+</div>
