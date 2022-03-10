@@ -26,6 +26,9 @@ Magento 2 calculate math operation (Addition & Substraction) from customer dashb
 
 -
 
+## How to access 
+Frontend: Login as user -> go to customer dasboard / my account -> choose simple calculator menu -> Fill the form
+Banckend: Login as backend user -> customers menu -> choose simple calculator to see customers calculation submission.
 
 
 
